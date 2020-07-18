@@ -7,8 +7,7 @@ const burger = {
       cb(res);
     });
   },
-  // The variables cols and vals are arrays.
-   create: (newBurger, cb) => {
+  create: (newBurger, cb) => {
     orm.create("burgers", newBurger, (res) => {
       cb(res);
     });

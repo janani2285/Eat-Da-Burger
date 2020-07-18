@@ -1,8 +1,9 @@
 // Import MySQL connection.
 const connection = require("../config/connection.js");
 
-// Object for all our SQL statement functions.
+
 const orm = {
+  //select all
   all: (tableInput, cb) => {
     const queryString = "SELECT * FROM ??";
     connection.query(queryString, [tableInput], (err, result) => {
@@ -12,6 +13,7 @@ const orm = {
       cb(result);
     });
   },
+  //insert new burger
   create: (table, newRowData, cb) => {
     const queryString = "INSERT INTO ?? SET ?";
     const values = [table, newRowData];
@@ -23,8 +25,7 @@ const orm = {
       cb(result);
     });
   },
-  // Example of updateValues: { name: "panther", sleepy: true }
-  // Example of condition: { id: 1 }
+  //update devour state of the burger
   update: (table, updateValues, condition, cb) => {
     const queryString = "UPDATE ?? SET ? WHERE ?";
     const values = [table, updateValues, condition];

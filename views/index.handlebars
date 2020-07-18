@@ -13,14 +13,14 @@
 </div>
 <div class="container">
     <div class="p-3">
-        <h2>Burgers to Devour</h2>
+        <h2 class="text-center">Burgers to Devour</h2>
 
         <ul>
             {{#each burger}}
             {{#unless isDevour}}
             <li>
                 {{name}}
-                <button class="devour" data-id="{{id}}">
+                <button class="devour btn btn-secondary" data-id="{{id}}">
                     DEVOUR IT
                 </button>
             </li>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="p-3">
-        <h2>Devoured Burgers</h2>
+        <h2 class="text-center">Devoured Burgers</h2>
 
         <ul>
             {{#each burger}}
@@ -44,16 +44,19 @@
 
 
     </div>
-    <div class="p-3">
+    <div class="p-3 text-center">
 
         <h2>Add a burger</h2>
-        <form class="create-form">
+        <form class="create-form border border-danger p-2">
 
             <div class="form-group">
                 <label for="bg">Burger Name:</label>
                 <input type="text" id="bg" name="name">
             </div>
-            <button type="submit">Add Burger</button>
+            <div style="padding-left: 70px;">
+               <button type="submit" class="btn btn-dark">Add Burger</button> 
+            </div>
+            
         </form>
     </div>
 
