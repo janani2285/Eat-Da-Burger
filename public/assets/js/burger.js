@@ -19,23 +19,23 @@ $(() => {
       });
     });
   
-  /*   $(".create-form").on("submit", (event) => {
+     $(".create-form").on("submit", (event) => {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      const newCat = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim(),
+      const newBurger = {
+        name: $("#bg").val().trim(),
+        isDevour: 0
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/burgers", {
         type: "POST",
-        data: newCat,
+        data: newBurger,
       }).then(() => {
         // Reload the page to get the updated list
         location.reload();
       });
-    }); */
+    }); 
   });
   

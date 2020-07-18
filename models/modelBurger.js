@@ -8,11 +8,11 @@ const burger = {
     });
   },
   // The variables cols and vals are arrays.
- /*  create: (newCat, cb) => {
-    orm.create("cats", newCat, (res) => {
+   create: (newBurger, cb) => {
+    orm.create("burgers", newBurger, (res) => {
       cb(res);
     });
-  },*/
+  },
   update: (newData, criteria, cb) => {
     orm.update("burgers", newData, criteria, (res) => {
       cb(res);

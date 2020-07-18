@@ -16,18 +16,14 @@ router.get("/", (req, res) => {
   });
 });
 
-/* router.post("/api/cats", (req, res) => {
-  cat.create({ name: req.body.name, sleepy: req.body.sleepy }, (result) => {
+ router.post("/api/burgers", (req, res) => {
+  burger.create({ name: req.body.name, isDevour: req.body.isDevour }, (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
-router.delete("/api/cats/:id", (req, res) => {
-  cat.delete(req.params.id, (result) => {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});*/
+
+
 // using put to replace the value of sleepy for a
 // specific cat resource
 router.put("/api/burger/:id", (req, res) => {

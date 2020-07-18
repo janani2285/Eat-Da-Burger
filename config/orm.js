@@ -12,7 +12,7 @@ const orm = {
       cb(result);
     });
   },
-  /* create: (table, newRowData, cb) => {
+  create: (table, newRowData, cb) => {
     const queryString = "INSERT INTO ?? SET ?";
     const values = [table, newRowData];
 
@@ -22,7 +22,7 @@ const orm = {
       }
       cb(result);
     });
-  },*/
+  },
   // Example of updateValues: { name: "panther", sleepy: true }
   // Example of condition: { id: 1 }
   update: (table, updateValues, condition, cb) => {
