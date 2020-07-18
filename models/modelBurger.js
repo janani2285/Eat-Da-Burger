@@ -12,17 +12,12 @@ const burger = {
     orm.create("cats", newCat, (res) => {
       cb(res);
     });
-  },
-  update: (catData, criteria, cb) => {
-    orm.update("cats", catData, criteria, (res) => {
+  },*/
+  update: (newData, criteria, cb) => {
+    orm.update("burgers", newData, criteria, (res) => {
       cb(res);
     });
-  },
-  delete: (id, cb) => {
-    orm.delete("cats", id, (res) => {
-      cb(res);
-    });
-  }, */
+  }
 };
 
 // Export the database functions for the controller (catsController.js).

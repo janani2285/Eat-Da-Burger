@@ -27,14 +27,14 @@ router.delete("/api/cats/:id", (req, res) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
-});
+});*/
 // using put to replace the value of sleepy for a
 // specific cat resource
-router.put("/api/cats/:id/sleepy", (req, res) => {
+router.put("/api/burger/:id", (req, res) => {
   const condition = { id: req.params.id };
-  const update = { sleepy: req.body.value };
+  const update = { isDevour: req.body.value };
 
-  cat.update(update, condition, (result) => {
+  burger.update(update, condition, (result) => {
     if (result.affectedRows === 0) {
       // If no rows were affected, then the ID must not exist, so 404
       return res.status(404).end();
@@ -42,6 +42,6 @@ router.put("/api/cats/:id/sleepy", (req, res) => {
     res.status(200).end();
   });
 });
- */
+ 
 // Export routes for server.js to use.
 module.exports = router;
