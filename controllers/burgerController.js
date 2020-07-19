@@ -7,19 +7,17 @@ const router = express.Router();
 
 //get route to retrieve all burger
 router.get("/", (req, res) => {
-    burger.all((data) => {
+  burger.all((data) => {
     const hbsObject = {
       burger: data,
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 //post route to insert new burger
- router.post("/api/burgers", (req, res) => {
+router.post("/api/burgers", (req, res) => {
   burger.create({ name: req.body.name, isDevour: req.body.isDevour }, (result) => {
-    
     res.json({ id: result.insertId });
   });
 });
@@ -37,6 +35,6 @@ router.put("/api/burger/:id", (req, res) => {
     res.status(200).end();
   });
 });
- 
+
 // Export routes for server.js to use.
 module.exports = router;

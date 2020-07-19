@@ -6,9 +6,10 @@ const orm = {
   //select all
   all: (tableInput, cb) => {
     const queryString = "SELECT * FROM ??";
+    console.log(queryString);
     connection.query(queryString, [tableInput], (err, result) => {
       if (err) {
-        throw err;
+        console.error(`ERROR while retrieving burger data from database: ${err.message}`);
       }
       cb(result);
     });
@@ -20,7 +21,7 @@ const orm = {
 
     connection.query(queryString, values, (err, result) => {
       if (err) {
-        throw err;
+        console.error(`ERROR while inserting new burger data into database: ${err.message}`);
       }
       cb(result);
     });
@@ -33,7 +34,7 @@ const orm = {
     console.log(queryString);
     connection.query(queryString, values, (err, result) => {
       if (err) {
-        throw err;
+        console.error(`ERROR while updating burger data into database: ${err.message}`);
       }
       cb(result);
     });
